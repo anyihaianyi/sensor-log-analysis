@@ -1,25 +1,20 @@
+import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt 
 import matplotlib.dates as mdates
 from week3_csv_stats import read_csv, clean
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+DATA_PATH = os.path.join(BASE_DIR, "data", "sensor_log.csv")
+FIG_PATH  = os.path.join(BASE_DIR, "figs", "temp_humidity.png")
+
 plt.rcParams["font.sans-serif"] = ["Microsoft YaHei"]   # 中文别变方块
 plt.rcParams["axes.unicode_minus"] = False              # 负号别变方块
 
-# 目标图：上下两个子图共享 x 轴
-#   上图：温度曲线    下图：湿度曲线
-#   要求：
-#   ① fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(11, 6), sharex=True)
-#   ② x 轴用真实时间字符串（从 CSV 第 1 列读）
-#   ③ 两个子图都加各自的均值虚线 + legend
-#   ④ x 轴刻度标签旋转 45 度，否则会挤成一团
-#   ⑤ 存成 figs/temp_humidity.png
-#   ⑥ 再加一件事：用 axis= 参数算"温度列和湿度列各自的均值"，
-#      验证你 D4 猜的"axis=0 到底是哪个方向"
-
 # 读取数据
-rows = read_csv("C:/Users/lenovo/Desktop/具身智能/code/data/sensor_log.csv")
+rows = read_csv(DATA_PATH)
 header = rows[0]
 rows = rows[1:]
 good,right_count,error_count = clean(rows)
@@ -81,7 +76,7 @@ ax[0].legend(loc="best")
 ax[1].legend(loc="best")
 
 # 保存图像
-fig.savefig("C:/Users/lenovo/Desktop/具身智能/code/W4/figs/temp_humidity.png", dpi=150, bbox_inches="tight")
+fig.savefig(FIG_PATH, dpi=150, bbox_inches="tight")
 
 # 完成绘图
 plt.show()
