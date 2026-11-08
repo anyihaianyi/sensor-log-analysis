@@ -36,9 +36,9 @@ python src/plot_sensor.py
 
 ## 历史错误
 
-- matplotlib 中文变方块——需设 font.sans-serif，Windows 用 Microsoft YaHei
-- ax[0] = plt.plot(...) 后报 AttributeError——plot() 返回列表不是 Axes，赋值覆盖了 Axes 
-- 绝对路径导致更换设备无法使用——改用 __file__ 推算
+- matplotlib 中文变方块 —— 需设 `font.sans-serif`，Windows 用 `Microsoft YaHei`
+- `ax[0] = plt.plot(...)` 后报 AttributeError —— `plot()` 返回列表不是 Axes，赋值覆盖了 Axes 
+- 绝对路径导致更换设备无法使用 —— 改用 `__file__` 推算
 
 ## 作者
 
