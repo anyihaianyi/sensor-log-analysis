@@ -46,6 +46,7 @@ python src/plot_sensor.py
 | `day4_index.py` | 索引切片、布尔索引 |
 | `day5_autograd.py` | 自动求导，手推结果对照 |
 | `day6_train.py` | 最小训练循环（y = 3x + 2 拟合） |
+| `day7.py` | 回炉重写：自动求导 + 梯度累加对照 |
 
 ## 历史错误
 
