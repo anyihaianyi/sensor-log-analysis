@@ -1,6 +1,8 @@
 import torch
-import os
 import numpy as np
+import sys, os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.join(BASE_DIR, "src"))
 from week3_csv_stats import read_csv, clean
 
 t = torch.arange(24).reshape(4, 6)
@@ -71,7 +73,6 @@ print()
 #    再和 numpy 算一遍对照
 #    → 两组数字必须一致（差 < 0.001）
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_PATH = os.path.join(BASE_DIR, "data", "sensor_log.csv")
 rows = read_csv(DATA_PATH)
 rows = rows[1:]
