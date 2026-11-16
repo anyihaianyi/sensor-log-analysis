@@ -34,6 +34,19 @@ python src/plot_sensor.py
 
 跳过的行会打印行号和原因，不会静默丢弃。
 
+## 学习记录
+
+`learn/` 目录是 PyTorch 上手练习（2026.11）：
+
+| 文件 | 内容 |
+|---|---|
+| `day1_check_env.py` | 环境验证：CUDA 可用性 + sm_120 内核实测 |
+| `day2_tensor.py` | 张量四件套：data / shape / dtype / device |
+| `day3_ops.py` | 逐元素乘 vs 矩阵乘、广播 |
+| `day4_index.py` | 索引切片、布尔索引 |
+| `day5_autograd.py` | 自动求导，手推结果对照 |
+| `day6_train.py` | 最小训练循环（y = 3x + 2 拟合） |
+
 ## 历史错误
 
 - matplotlib 中文变方块 —— 需设 `font.sans-serif`，Windows 用 `Microsoft YaHei`
